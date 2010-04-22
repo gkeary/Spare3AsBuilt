@@ -1,0 +1,64 @@
+Install git
+clone the spqre1 project into c:\spare3
+\
+1. turn off windows firewall so rdp session will work.
+2. turn off windows firewall so we can connect to sqlserver
+3. download powershell and friends from
+    http://www.microsoft.com/downloads/details.aspx?FamilyId=60cb5b6c-6532-45e0-ab0f-a94ae9ababf5&displaylang=en
+
+The Windows Management Framework Core package provides updated management functionality for IT Professionals. This package includes the following components: Windows PowerShell 2.0 and Windows Remote Management (WinRM) 2.0. After you install this item, you may have to restart your computer.
+    
+4. download sqlserver2008 sqlmanagement
+  http://www.microsoft.com/downloads/details.aspx?familyid=08E52AC2-1D62-45F6-9A4A-4B76A8564A2B&displaylang=en
+ download windows installer...
+  wrong wrong wrong
+  http://www.microsoft.com/downloads/details.aspx?FamilyId=5A58B56F-60B6-4412-95B9-54D056D6F9F4&displaylang=en
+
+try this one...
+http://www.softwarepatch.com/windows/wininstallnt.html 
+  installs something called: Driver Detective...  
+   nope TAKE THIS OUTm  I did take it out.
+
+try this... this is MSI Installer 4.5
+http://www.microsoft.com/downloads/details.aspx?FamilyId=5A58B56F-60B6-4412-95B9-54D056D6F9F4&displaylang=en
+   this required a re-boot -- (file not included in downloads directory)
+
+
+
+5. download ruby DONE DONE DONE 
+download gvim  DONE DONE DONE
+
+
+
+now see if I can connect to spare3\msmlbix from JAKE ??
+don't bother because MSMLMSM sql server isn't running.
+so...
+
+INSTALL sql server express 2008
+http://www.microsoft.com/express/Database/
+now it is in and SSMSE runs
+but sa password <> 123ross321 and all the ps1 scripts need changing 
+for:  a. Spare3\sqlexpress  and b:  123ross321  and usernames...
+
+
+added users but not to the correct domain.  they are there but this has to be done by hand and it has to be done within the RossExpress domain...
+How about VPN access for rgk?
+
+Now we have sqlexpress 2008 installed and it can be connected to from another box.  
+conditions for this to happen include:  Firewall off.
+   run sqlexpress configuration manager..
+     enable tcp/ip in two places
+     make sure the Browser service is started (or maybe the sql agent service)
+          one of those will start and the other one will not start (for sqlexpress)
+
+    right now the Browser is runnint and the sqlserver service is running.
+
+
+Make sure they strart up automatically.  Boot the box to test it...
+NOTE:  for ps1 files, run  " . ./s3.ps1" on startup -- be sure to source it !
+
+OK, sqlserver came up and I could connect to it from Elwood.
+
+now lets create database logins...
+
+
